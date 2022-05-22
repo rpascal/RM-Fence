@@ -1,8 +1,13 @@
-/* 
-* REQUIRED STYLES 
+/*
+* REQUIRED STYLES
 */
 @import "main/scaffolding";
 @import "main/typography";
 
+
+.force-break-wrap-text {
+  word-wrap: break-word !important;
+  white-space: pre-wrap !important;
+}
 
 

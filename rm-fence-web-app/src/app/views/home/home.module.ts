@@ -13,6 +13,8 @@ import { WINDOW_PROVIDERS } from '@shared/helpers/window.helper';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { IntroComponent } from './intro/intro.component';
+import { ServicesSectionComponent } from './services-section/services-section.component';
+import { WhyUsSectionComponent } from './why-us-section/why-us-section.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { IntroComponent } from './intro/intro.component';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    IntroComponent
+    IntroComponent,
+    ServicesSectionComponent,
+    WhyUsSectionComponent
   ],
   imports: [
     CommonModule,
