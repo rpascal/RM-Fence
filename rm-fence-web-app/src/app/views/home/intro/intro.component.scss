@@ -1,13 +1,28 @@
+// .no-webp {
+  .home-intro-section {
+    background: url("../../../../assets/images/pexels-pixabay-269035-min.jpg")
+      no-repeat center center;
+  }
+// }
+
+// Issues getting this to work when .webp is added to html tags, I think it is because of angulars
+// encapsulation therefore this individual component cannot see that class on <html>
+// modernizr will add the tags to root, maybe can make this work on components?
+// .webp {
+//   .home-intro-section {
+//     background: url("../../../../assets/images/pexels-pixabay-269035.webp")
+//       no-repeat center center;
+//   }
+// }
+
 .home-intro-section {
   // background: url('../../../../assets/images/home-bg.jpg') no-repeat center center;
   // color: #ffffff;
   overflow: visible;
 
-  background: url('../../../../assets/images/pexels-pixabay-269035.jpg') no-repeat center center;
-
+  // background: url('../../../../assets/images/pexels-pixabay-269035.jpg') no-repeat center center;
 
   color: #ffffff;
-
 
   // background: #ffffff;
   overflow: hidden;
@@ -37,7 +52,7 @@
 }
 .intro-cta {
   max-width: 180px;
-  margin:  0 auto;
+  margin: 0 auto;
 }
 .intro-product {
   position: relative;

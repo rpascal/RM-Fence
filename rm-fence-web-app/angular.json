@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rm-fence-web-app",
+            "outputPath": "dist/rm-fence-web-app/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -36,7 +36,8 @@
             "styles": [
               "src/assets/styles/app.scss"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           },
           "configurations": {
             "production": {
@@ -106,6 +107,65 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/rm-fence-web-app/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "rm-fence-web-app:build:development",
+              "serverTarget": "rm-fence-web-app:server:development"
+            },
+            "production": {
+              "browserTarget": "rm-fence-web-app:build:production",
+              "serverTarget": "rm-fence-web-app:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "rm-fence-web-app:build:production",
+              "serverTarget": "rm-fence-web-app:server:production"
+            },
+            "development": {
+              "browserTarget": "rm-fence-web-app:build:development",
+              "serverTarget": "rm-fence-web-app:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
