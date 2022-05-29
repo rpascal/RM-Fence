@@ -1,3 +1,10 @@
-<h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+<script context="module" lang="ts">
+	export const prerender = true;
+</script>
+
+<script>
+import Intro from '../components/Intro/Intro.svelte'
+
+</script>
+
+<Intro />
