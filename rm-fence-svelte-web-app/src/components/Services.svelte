@@ -1,16 +1,12 @@
 <script lang="ts">
-	// import Card, { Content } from '@smui/card';
-
-	import Card, { Content, PrimaryAction, Actions, ActionButtons, ActionIcons } from '@smui/card';
-
-	import Button, { Label } from '@smui/button';
+	import Button,{ Label } from '@smui/button';
+	import Card,{ ActionButtons,Actions,Content } from '@smui/card';
 </script>
 
 <section id="service-section" class="home-section bg-gray-50 py-20">
-	<!-- container -->
-	<div class="container my-0 mx-auto px-4">
+	<div class="container my-0 mx-auto px-4 max-w-6xl">
 		<div class="section-header section-header-long mb-16">
-			<h2 class="text-5xl mb-4">Our Services</h2>
+			<h2 class="text-5xl mb-4 font-bold">Our Services</h2>
 			<p class="text-base max-w-3xl">
 				There is no job too big or too small for R&M to handle! Call us for all of your commercial
 				fencing needs. We offer high quality fencing solutions for your home or business.
