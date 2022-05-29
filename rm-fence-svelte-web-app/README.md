@@ -45,3 +45,25 @@ npm install -D tailwindcss postcss autoprefixer svelte-preprocess
 npx tailwindcss init tailwind.config.cjs -p
 mv postcss.config.js postcss.config.cjs
 ```
+
+### SCSS
+`npm i -D svelte-preprocess sass`
+Then `Svelte: Restart Language Server`
+
+### Material 
+https://sveltematerialui.com/
+- Github seems to have better docs
+
+You need to install on components to get the theme generation to work
+- `npm install --save-dev @smui/button`
+
+```
+npm install --save-dev smui-theme
+npm install --save-dev smui-theme
+npx smui-theme template src/theme
+```
+Add to package.json
+`"generate-smui-theme": "smui-theme compile static/smui.css -i src/theme"`
+
+Appears like you need to regenerate after adding each component to properly get the css
+

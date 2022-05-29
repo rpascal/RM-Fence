@@ -10,9 +10,12 @@
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
-		"format": "prettier --write --plugin-search-dir=. ."
+		"format": "prettier --write --plugin-search-dir=. .",
+		"generate-smui-theme": "smui-theme compile static/smui.css -i src/theme"
 	},
 	"devDependencies": {
+		"@smui/button": "^6.0.0-beta.16",
+		"@smui/icon-button": "^6.0.0-beta.16",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"@typescript-eslint/eslint-plugin": "^5.10.1",
@@ -24,6 +27,8 @@
 		"postcss": "^8.4.14",
 		"prettier": "^2.5.1",
 		"prettier-plugin-svelte": "^2.5.0",
+		"sass": "^1.52.1",
+		"smui-theme": "^6.0.0-beta.16",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.2.6",
 		"svelte-preprocess": "^4.10.6",
