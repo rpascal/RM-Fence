@@ -10,46 +10,56 @@
 
 <svelte:window bind:scrollY={scrollYAmount} />
 
-<header class:menu-opened={menuOpened}>
-	<header id="home-header" class={scrollYAmount > 10 ? 'header-fixed' : ''}>
-		<div class="container">
-			<div class="header-mobile-top">
-				<div class="home-logo mr-1">
-					<a href="/"><img {src} alt="logo" /></a>
-				</div>
-				<div id="menu-toggle">
-					<IconButton class="material-icons" on:click={() => (menuOpened = !menuOpened)}
-						>menu</IconButton
-					>
-				</div>
+<header
+	id="home-header"
+	class:menu-opened={menuOpened}
+	class={scrollYAmount > 10 ? 'header-fixed' : ''}
+>
+	<div class="container max-w-6xl mx-auto my-0 px-auto py-0">
+		<div class="header-mobile-top">
+			<div class="home-logo mr-4">
+				<a href="/"><img {src} alt="logo" /></a>
 			</div>
-
-			<div class="top-menu">
-				<Button class="hometop-btn">
-					<Label><strong>Home</strong></Label>
-				</Button>
-
-				<Button class="hometop-btn">
-					<Label><strong>Services</strong></Label>
-				</Button>
-
-				<Button class="hometop-btn">
-					<Label><strong>Why Us</strong></Label>
-				</Button>
-
-				<Button class="hometop-btn">
-					<Label><strong>About</strong></Label>
-				</Button>
-
-				<span id="spanSpacer" />
-
-				<div class="action-icon-button-wrapper">
-					<IconButton href="https://www.facebook.com/Rmfenceohio/" target="_blank" class="material-icons hometop-btn" size="button">facebook</IconButton>
-					<IconButton href="tel:+4402365758" target="_blank" class="material-icons hometop-btn" size="button">phone</IconButton>
-				</div>
+			<div id="menu-toggle">
+				<IconButton class="material-icons" on:click={() => (menuOpened = !menuOpened)}
+					>menu</IconButton
+				>
 			</div>
 		</div>
-	</header>
+
+		<div class="top-menu flex flex-row flex-1 grow">
+			<Button class="hometop-btn hover:bg-gray-100">
+				<Label><strong>Home</strong></Label>
+			</Button>
+
+			<Button class="hometop-btn hover:bg-gray-100">
+				<Label><strong>Services</strong></Label>
+			</Button>
+
+			<Button class="hometop-btn hover:bg-gray-100">
+				<Label><strong>Why Us</strong></Label>
+			</Button>
+
+			<Button class="hometop-btn hover:bg-gray-100">
+				<Label><strong>About</strong></Label>
+			</Button>
+
+			<span class="flex flex-1 flex-row" />
+
+			<IconButton
+				href="https://www.facebook.com/Rmfenceohio/"
+				target="_blank"
+				class="material-icons hometop-btn"
+				size="button">facebook</IconButton
+			>
+			<IconButton
+				href="tel:+4402365758"
+				target="_blank"
+				class="material-icons hometop-btn"
+				size="button">phone</IconButton
+			>
+		</div>
+	</div>
 </header>
 
 <style lang="scss">
@@ -59,31 +69,12 @@
 		text-decoration: none;
 	}
 
-	// .action-icon-button-wrapper {
 	// 	.mat-icon {
 	// 		font-size: 20px;
 	// 	}
 	// 	.mdc-icon-button {
 	// 		height: 36px !important;
 	// 	}
-	// }
-
-	.mr-1 {
-		margin-right: 1rem !important;
-	}
-
-	#spanSpacer {
-		flex: 1 1 0%;
-		display: flex;
-		flex-direction: row;
-	}
-
-	.top-menu {
-		flex: 1 1 0%;
-		display: flex;
-		flex-direction: row;
-		box-sizing: border-box;
-	}
 
 	#home-header {
 		position: absolute;
@@ -105,10 +96,6 @@
 		align-items: center;
 		align-content: center;
 		box-sizing: border-box;
-
-		max-width: 1170px;
-		margin: 0 auto;
-		padding: 0 15px;
 	}
 
 	// .hometop-btn:hover .mat-button-focus-overlay {
@@ -125,7 +112,6 @@
 	// 	top: -12px !important;
 	// 	bottom: -12px !important;
 	// }
-
 
 	.header-fixed {
 		position: fixed !important;
