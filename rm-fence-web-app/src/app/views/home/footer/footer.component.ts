@@ -1,23 +1,17 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { WINDOW } from '@shared/helpers/window.helper';
+import { Component, OnInit } from '@angular/core';
+import { WindowRefService } from '@shared/services/window-ref/window-ref.service';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
+  constructor(private windowRefService: WindowRefService) {}
 
-  constructor(
-    @Inject(WINDOW) private window: Window
-  ) { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   call() {
-    this.window.open('tel:+4402365758');
+    this.windowRefService.nativeWindow().open('tel:+4402365758');
   }
-
-
 }

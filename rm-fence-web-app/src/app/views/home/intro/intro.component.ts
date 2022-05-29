@@ -1,5 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { WINDOW } from '@shared/helpers/window.helper';
+import { Component, OnInit } from '@angular/core';
+import { WindowRefService } from '@shared/services/window-ref/window-ref.service';
 
 @Component({
   selector: 'rmf-intro',
@@ -7,14 +7,11 @@ import { WINDOW } from '@shared/helpers/window.helper';
   styleUrls: ['./intro.component.scss'],
 })
 export class IntroComponent implements OnInit {
-  constructor(
-    @Inject(WINDOW) private window: Window
-  ) { }
+  constructor(private windowRefService: WindowRefService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   call() {
-    this.window.open('tel:+4402365758');
+    this.windowRefService.nativeWindow().open('tel:+4402365758');
   }
 }

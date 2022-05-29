@@ -1,16 +1,12 @@
-import {
-  Component,
-  OnInit,
-  HostListener,
-  HostBinding,
-  Inject,
-  Input,
-} from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import {
-  WINDOW_PROVIDERS,
-  WINDOW,
-} from '../../../shared/helpers/window.helper';
+  Component,
+  HostBinding,
+  HostListener,
+  Inject,
+  OnInit,
+} from '@angular/core';
+import { WindowRefService } from '@shared/services/window-ref/window-ref.service';
 
 @Component({
   selector: 'app-header',
@@ -21,14 +17,15 @@ export class HeaderComponent implements OnInit {
   isFixed;
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    @Inject(WINDOW) private window: Window
+    private windowRefService: WindowRefService
   ) {}
 
   ngOnInit() {}
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const offset =
-      this.window.pageYOffset ||
+      this.windowRefService.nativeWindow().pageYOffset ||
       this.document.documentElement.scrollTop ||
       this.document.body.scrollTop ||
       0;
@@ -46,10 +43,12 @@ export class HeaderComponent implements OnInit {
   }
 
   call() {
-    this.window.open('tel:+4402365758');
+    this.windowRefService.nativeWindow().open('tel:+4402365758');
   }
 
   facebook() {
-    this.window.open('https://www.facebook.com/Rmfenceohio/');
+    this.windowRefService.nativeWindow().open(
+      'https://www.facebook.com/Rmfenceohio/'
+    );
   }
 }
