@@ -18,7 +18,7 @@
 	<div class="container max-w-6xl mx-auto my-0 px-auto py-0">
 		<div class="header-mobile-top">
 			<div class="home-logo mr-4">
-				<a href="/"><img {src} alt="logo" /></a>
+				<a href="/"><img class="logo-img" {src} alt="logo" /></a>
 			</div>
 			<div id="menu-toggle">
 				<IconButton class="material-icons" on:click={() => (menuOpened = !menuOpened)}
@@ -133,7 +133,7 @@
 	.home-logo {
 		display: flex;
 		align-items: center;
-		img {
+		.logo-img  {
 			height: 38px;
 			width: auto;
 		}

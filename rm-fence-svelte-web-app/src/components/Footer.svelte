@@ -1,7 +1,7 @@
 <script>
-	import { Icon,Label } from '@smui/button';
+	import { Icon, Label } from '@smui/button';
 	import Button from '@smui/button/src/Button.svelte';
-	import List,{ Graphic,Item,PrimaryText,SecondaryText,Text } from '@smui/list';
+	import List, { Graphic, Item, PrimaryText, SecondaryText, Text } from '@smui/list';
 
 	const src = '/greater-cleveland-service-area.png';
 </script>
@@ -33,7 +33,7 @@
 
 					<List class="" twoLine>
 						<Item>
-							<a href="tel:+4402365758" target="_blank" class="absolute w-full h-full" >&#32</a>
+							<a href="tel:+4402365758" target="_blank" class="absolute w-full h-full">&#32</a>
 							<Graphic class="material-icons text-yellow-500">phone</Graphic>
 
 							<Text>
@@ -42,7 +42,9 @@
 							</Text>
 						</Item>
 						<Item>
-							<a href="mailto:rmfence2006@gmail.com" target="_blank" class="absolute w-full h-full" >&#32</a>
+							<a href="mailto:rmfence2006@gmail.com" target="_blank" class="absolute w-full h-full"
+								>&#32</a
+							>
 							<Graphic class="material-icons text-yellow-500">email</Graphic>
 
 							<Text>
@@ -54,8 +56,8 @@
 				</div>
 
 				<!-- fxLayoutAlign="center" -->
-				<div class="md:w-1/3	footer-box service-area-image">
-					<img {src} alt="service area" />
+				<div class="md:w-1/3 footer-box m-auto">
+					<img class="w-full h-auto" {src} alt="service area" />
 				</div>
 			</div>
 		</div>
@@ -79,7 +81,7 @@
 		position: relative;
 		margin: 0 0 24px;
 		padding-bottom: 12px;
-	}   
+	}
 
 	@media (max-width: 959px) {
 		.footer-box:first-child {
