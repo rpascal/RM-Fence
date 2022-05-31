@@ -2,7 +2,7 @@
 	import Card,{ Content } from '@smui/card';
 </script>
 
-<section id="service-section" class="home-section bg-neutral-100 py-20">
+<section id="why-us-section" class="home-section bg-neutral-100 py-20">
 	<div class="container my-0 mx-auto px-4 max-w-6xl">
 		<div class="section-header section-header-long mb-16">
 			<h2 class="text-5xl mb-4 font-bold">Why Us</h2>

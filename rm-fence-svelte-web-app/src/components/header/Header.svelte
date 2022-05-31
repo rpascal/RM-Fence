@@ -6,6 +6,13 @@
 
 	let scrollYAmount: number;
 	let menuOpened: boolean = false;
+
+	import { smoothScroll } from '../../util/scroll-to-element';
+
+	function scrollAndCloseMenu(elementId: string) {
+		smoothScroll(elementId);
+		menuOpened = false;
+	}
 </script>
 
 <svelte:window bind:scrollY={scrollYAmount} />
@@ -28,36 +35,52 @@
 		</div>
 
 		<div class="top-menu flex flex-row flex-1 grow">
-			<Button class="hometop-btn hover:bg-gray-100">
+			<Button
+				class="hometop-btn hover:bg-gray-100"
+				on:click={() => scrollAndCloseMenu('intro-section')}
+			>
 				<Label><strong>Home</strong></Label>
 			</Button>
 
-			<Button class="hometop-btn hover:bg-gray-100">
+			<Button
+				class="hometop-btn hover:bg-gray-100"
+				on:click={() => scrollAndCloseMenu('service-section')}
+			>
 				<Label><strong>Services</strong></Label>
 			</Button>
 
-			<Button class="hometop-btn hover:bg-gray-100">
+			<Button
+				class="hometop-btn hover:bg-gray-100"
+				on:click={() => scrollAndCloseMenu('why-us-section')}
+			>
 				<Label><strong>Why Us</strong></Label>
 			</Button>
 
-			<Button class="hometop-btn hover:bg-gray-100">
+			<Button
+				class="hometop-btn hover:bg-gray-100"
+				on:click={() => scrollAndCloseMenu('footer-section')}
+			>
 				<Label><strong>About</strong></Label>
 			</Button>
 
 			<span class="flex flex-1 flex-row" />
 
-			<IconButton
-				href="https://www.facebook.com/Rmfenceohio/"
-				target="_blank"
-				class="material-icons hometop-btn"
-				size="button">facebook</IconButton
-			>
-			<IconButton
-				href="tel:+4402365758"
-				target="_blank"
-				class="material-icons hometop-btn"
-				size="button">phone</IconButton
-			>
+			<div class="text-center">
+				<IconButton
+					href="https://www.facebook.com/Rmfenceohio/"
+					target="_blank"
+					class="material-icons hometop-btn"
+					size="button"
+					ripple={false}>facebook</IconButton
+				>
+				<IconButton
+					href="tel:+4402365758"
+					target="_blank"
+					class="material-icons hometop-btn"
+					size="button"
+					ripple={false}>phone</IconButton
+				>
+			</div>
 		</div>
 	</div>
 </header>
@@ -133,7 +156,7 @@
 	.home-logo {
 		display: flex;
 		align-items: center;
-		.logo-img  {
+		.logo-img {
 			height: 38px;
 			width: auto;
 		}
