@@ -45,6 +45,14 @@ npm install -D tailwindcss postcss autoprefixer svelte-preprocess
 npx tailwindcss init tailwind.config.cjs -p
 mv postcss.config.js postcss.config.cjs
 ```
+Add -`content: ['./src/**/*.{html,js,svelte,ts}'],`
+Create `src/app.css` with content
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+import css in layout file
 
 ### SCSS
 `npm i -D svelte-preprocess sass`
