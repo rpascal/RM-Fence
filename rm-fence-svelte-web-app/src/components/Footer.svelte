@@ -82,6 +82,15 @@
 		margin: 0 0 24px;
 		padding-bottom: 12px;
 	}
+	.footer-box-title::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 2px;
+		width: 64px;
+		background-color: #ffc107;
+	}
 
 	@media (max-width: 959px) {
 		.footer-box:first-child {

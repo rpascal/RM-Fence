@@ -2,6 +2,8 @@
 	import Button, { Label } from '@smui/button';
 	import IconButton from '@smui/icon-button';
 
+	import { page } from '$app/stores';
+
 	const src = '/logo-thin.png';
 
 	let scrollYAmount: number;
@@ -10,8 +12,11 @@
 	import { smoothScroll } from '../../util/scroll-to-element';
 
 	function scrollAndCloseMenu(elementId: string) {
-		smoothScroll(elementId);
-		menuOpened = false;
+		const pathName = $page.url.pathname;
+		if (pathName === '/') {
+			smoothScroll(elementId);
+			menuOpened = false;
+		}
 	}
 </script>
 
@@ -37,6 +42,7 @@
 		<div class="top-menu flex flex-row flex-1 grow">
 			<Button
 				class="hometop-btn hover:bg-gray-100"
+				href="/#intro-section"
 				on:click={() => scrollAndCloseMenu('intro-section')}
 			>
 				<Label><strong>Home</strong></Label>
@@ -44,13 +50,19 @@
 
 			<Button
 				class="hometop-btn hover:bg-gray-100"
+				href="/#service-section"
 				on:click={() => scrollAndCloseMenu('service-section')}
 			>
 				<Label><strong>Services</strong></Label>
 			</Button>
 
+			<Button class="hometop-btn hover:bg-gray-100" href="/portfolio">
+				<Label><strong>Portfolio</strong></Label>
+			</Button>
+
 			<Button
 				class="hometop-btn hover:bg-gray-100"
+				href="/#why-us-section"
 				on:click={() => scrollAndCloseMenu('why-us-section')}
 			>
 				<Label><strong>Why Us</strong></Label>
@@ -58,6 +70,7 @@
 
 			<Button
 				class="hometop-btn hover:bg-gray-100"
+				href="/#footer-section"
 				on:click={() => scrollAndCloseMenu('footer-section')}
 			>
 				<Label><strong>About</strong></Label>
