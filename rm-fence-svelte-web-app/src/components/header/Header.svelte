@@ -11,9 +11,9 @@
 
 	import { smoothScroll } from '../../util/scroll-to-element';
 
-	function scrollAndCloseMenu(elementId: string) {
+	function scrollAndCloseMenu(elementId: string, force: boolean = false) {
 		const pathName = $page.url.pathname;
-		if (pathName === '/') {
+		if (force || pathName === '/') {
 			smoothScroll(elementId);
 			menuOpened = false;
 		}
@@ -70,10 +70,13 @@
 
 			<Button
 				class="hometop-btn hover:bg-gray-100"
-				href="/#footer-section"
-				on:click={() => scrollAndCloseMenu('footer-section')}
+				on:click={() => scrollAndCloseMenu('footer-section', true)}
 			>
 				<Label><strong>About</strong></Label>
+			</Button>
+
+			<Button class="hometop-btn hover:bg-gray-100" href="/contact">
+				<Label><strong>Contact</strong></Label>
 			</Button>
 
 			<span class="flex flex-1 flex-row" />
